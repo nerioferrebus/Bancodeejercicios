@@ -27,9 +27,10 @@ public class TrabajoAlgebra {
             System.out.println("1. Opcion 1: Suma de matrices");
             System.out.println("2. Opcion 2: Producto de matrices");
             System.out.println("3. Opcion 3: Matriz inversa");
-            System.out.println("4. Opcion 4: Salir del menu");
+            System.out.println("4. Opcion 4: Resta de Matrices");
+            System.out.println("5. Opcion 5: Salir del menu");
 
-            System.out.println("Elige un numero entre 1 - 4:   ");
+            System.out.println("Elige un numero entre 1 - 5:   ");
             opcion = entrada.nextInt();
 
             switch (opcion) {
@@ -42,8 +43,14 @@ public class TrabajoAlgebra {
                     System.out.println("    ");
                     for (int i = 0; i < 3; i++) {
                         for (int j = 0; j < 3; j++) {
-                            System.out.print("Ingrese numero en la posicion [" + i + "][" + j + "]:");
-                            Matriz[i][j] = entrada.nextInt();
+                        try {
+                            System.out.print("Ingrese número en la posición [" + i + "][" + j + "]: ");
+                    Matriz[i][j] = entrada.nextInt();
+                          } catch (Exception e) {
+                            System.out.println("Son matrices, por favor, ingrese un número");
+                            entrada.next(); // Limpiar el búfer del teclado
+                            j--; // Repetir el mismo valor de j para que el usuario pueda ingresar otro número.
+                          }
                         }
                     }
                     System.out.println("La primera matriz es:    ");
@@ -60,12 +67,15 @@ public class TrabajoAlgebra {
                     System.out.println("     ");
                     for (int i = 0; i < 3; i++) {
                         for (int j = 0; j < 3; j++) {
-                            System.out.print("Ingrese numero en la posicion  [" + i + "][" + j + "]:");
-
-                            Matriz2[i][j] = entrada.nextInt();
-
+                        try {
+                            System.out.print("Ingrese número en la posición [" + i + "][" + j + "]: ");
+                    Matriz[i][j] = entrada.nextInt();
+                          } catch (Exception e) {
+                            System.out.println("Ya te comentamos, debes ingresar un numero");
+                            entrada.next(); 
+                            j--; 
+                          }
                         }
-
                     }
                     System.out.println("La segunda matriz es:  ");
                     for (int i = 0; i < 3; i++) {
@@ -105,9 +115,14 @@ public class TrabajoAlgebra {
                     System.out.println("       ");
                     for (int i = 0; i < 3; i++) {
                         for (int j = 0; j < 3; j++) {
-                            System.out.print("Ingrese numero en la posicion [" + i + "][" + j + "]:");
-                            Matriz5[i][j] = entrada.nextInt();
-
+                         try {
+                            System.out.print("Ingrese número en la posición [" + i + "][" + j + "]: ");
+                    Matriz5[i][j] = entrada.nextInt();
+                          } catch (Exception e) {
+                            System.out.println("Son matrices, por favor, ingrese un número");
+                            entrada.next(); 
+                            j--; 
+                          }
                         }
                     }
                     System.out.println("La primera matriz es:    ");
@@ -122,9 +137,14 @@ public class TrabajoAlgebra {
                     System.out.println("       ");
                     for (int i = 0; i < 3; i++) {
                         for (int j = 0; j < 3; j++) {
-                            System.out.print("Ingrese numero en la posicion [" + i + "][" + j + "]:    ");
-                            Matriz7[i][j] = entrada.nextInt();
-
+                    try {
+                            System.out.print("Ingrese número en la posición [" + i + "][" + j + "]: ");
+                    Matriz7[i][j] = entrada.nextInt();
+                          } catch (Exception e) {
+                            System.out.println("Ya te comentamos, debes ingresar un numero");
+                            entrada.next(); 
+                            j--; 
+                          }
                         }
                     }
 
@@ -200,7 +220,78 @@ public class TrabajoAlgebra {
 
 ("-------------------------------------------------------------------------------------");
                     break;
+                    
                 case 4:
+                       System.out.println("Elegiste resta de matrices");
+                    int Matriz11[][] = new int[3][3],Matriz12[][] = new int[3][3],Matriz13[][] = new int[3][3];
+
+                    System.out.println("Ingresando los elementos de la primera matriz   ");
+                    System.out.println("    ");
+                    for (int i = 0; i < 3; i++) {
+                        for (int j = 0; j < 3; j++) {
+                        try {
+                            System.out.print("Ingrese número en la posición [" + i + "][" + j + "]: ");
+                    Matriz11[i][j] = entrada.nextInt();
+                          } catch (Exception e) {
+                            System.out.println("Son matrices, por favor, ingrese un número");
+                            entrada.next(); 
+                            j--; 
+                          }
+                        }
+                    }
+                    System.out.println("La primera matriz es:    ");
+                    for (int i = 0; i < 3; i++) {
+                        for (int j = 0; j < 3; j++) {
+                            System.out.print(Matriz11[i][j] + "   ");
+
+                        }
+                        System.out.println();
+                    }
+
+                    System.out.println("       ");
+                    System.out.println("Ingresando los elementos de la segunda matriz:   ");
+                    System.out.println("     ");
+                    for (int i = 0; i < 3; i++) {
+                        for (int j = 0; j < 3; j++) {
+                    try {
+                            System.out.print("Ingrese número en la posición [" + i + "][" + j + "]: ");
+                    Matriz12[i][j] = entrada.nextInt();
+                          } catch (Exception e) {
+                            System.out.println("Ya te comentamos, debes ingresar un numero");
+                            entrada.next(); 
+                            j--; 
+                          }
+                        }
+                    }
+                    System.out.println("La segunda matriz es:  ");
+                    for (int i = 0; i < 3; i++) {
+                        for (int j = 0; j < 3; j++) {
+                            System.out.print(Matriz12[i][j] + "  ");
+
+                        }
+                        System.out.println();
+
+                    }
+                    for (int i = 0; i < 3; i++) {
+                        for (int j = 0; j < 3; j++) {
+                            Matriz13[i][j] = Matriz11[i][j] - Matriz12[i][j];
+
+                        }
+
+                    }
+                    System.out.println("     ");
+                    System.out.println("La suma de las dos matrices es:    ");
+                    for (int i = 0; i < 3; i++) {
+                        for (int j = 0; j < 3; j++) {
+                            System.out.print(Matriz13[i][j] + "   ");
+                        }
+                        System.out.println();
+                    }
+                    System.out.println();
+                    break;
+                    
+                    
+                case 5:
                     System.out.println("Elegiste salir del menu");
                     Salir = true;
                     break;
